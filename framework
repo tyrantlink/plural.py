@@ -1,0 +1,25 @@
+
+
+# pseudo code rough draft
+
+app = Application(token)
+
+
+await app.fetch_message(123)
+await app.as_user(123).send_message(...)
+await app.as_user(123).fetch_groups()
+group = await app.as_user(123).fetch_group(123)
+await group.fetch_members()
+await app.as_user(123).fetch_members()
+member = await app.as_user(123).fetch_member(123)
+config = await app.as_user(123).fetch_config(123)
+
+await group.edit(name='new name')
+await member.edit(name='new name')
+await config.edit(x='new value')
+
+
+user = await app.as_user(123)
+
+await user.send_message(...)
+await user.create_group(...)

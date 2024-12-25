@@ -1,0 +1,28 @@
+[project]
+name = 'plural.py'
+description = 'Python wrapper for the /plu/ral API'
+license = 'MIT'
+readme = 'README.md'
+authors = [
+    { name = 'tyrantlink', email = '38902185+tyrantlink@users.noreply.github.com' }
+]
+requires-python = '>=3.13'
+dynamic = ['version']
+dependencies = [
+    "aiohttp>=3.11.11",
+    "bson>=0.5.10",
+    "hatch>=1.14.0",
+    "pydantic>=2.10.4",
+]
+
+[build-system]
+requires = ['hatchling']
+build-backend = 'hatchling.build'
+
+[tool.hatch.version]
+source = 'code'
+path = 'src/plural/__init__.py'
+search-paths = ['src']
+
+[tool.hatch.build.targets.wheel]
+packages = ['plural']
